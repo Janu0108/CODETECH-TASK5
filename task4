@@ -1,0 +1,79 @@
+class Library:
+    def __init__(self):
+        self.items = {}
+
+    def add_item(self, title, author, category, item_type):
+        self.items[title] = {
+            "author": author,
+            "category": category,
+            "item_type": item_type,
+            "status": "available"
+        }
+
+    def check_out(self, title):
+        if title in self.items and self.items[title]["status"] == "available":
+            self.items[title]["status"] = "checked out"
+            print(f"{title} has been checked out.")
+        else:
+            print(f"{title} is not available.")
+
+    def return_item(self, title):
+        if title in self.items and self.items[title]["status"] == "checked out":
+            self.items[title]["status"] = "available"
+            print(f"{title} has been returned.")
+        else:
+            print(f"{title} is not checked out.")
+
+    def search(self, query):
+        results = []
+        for title, item in self.items.items():
+            if query.lower() in title.lower() or query.lower() in item["author"].lower():
+                results.append(title)
+        return results
+
+    def manage_fines(self):
+        # Implement fine management logic here
+        pass
+
+
+def main():
+    library = Library()
+
+    while True:
+        print("1. Add item")
+        print("2. Check out")
+        print("3. Return")
+        print("4. Search")
+        print("5. Manage fines")
+        print("6. Exit")
+
+        choice = input("Choose an option: ")
+
+        if choice == "1":
+            title = input("Enter title: ")
+            author = input("Enter author: ")
+            category = input("Enter category: ")
+            item_type = input("Enter item type: ")
+            library.add_item(title, author, category, item_type)
+        elif choice == "2":
+            title = input("Enter title: ")
+            library.check_out(title)
+        elif choice == "3":
+            title = input("Enter title: ")
+            library.return_item(title)
+        elif choice == "4":
+            query = input("Enter search query: ")
+            results = library.search(query)
+            print("Results:")
+            for title in results:
+                print(title)
+        elif choice == "5":
+            library.manage_fines()
+        elif choice == "6":
+            break
+        else:
+            print("Invalid choice. Please try again.")
+
+
+if __name__ == "__main__":
+    main()
