@@ -9,6 +9,11 @@ Overview:
 This Python program provides a basic library management system that allows users to manage library resources such as books, magazines, and DVDs. The system supports adding new items to the library, checking out and returning items, managing overdue fines, and searching for items by various criteria.
  ![Uploading WhatsApp Image 2024-07-25 at 5.47.35 PM.jpeg…]()
 
+ ![Uploading WhatsApp Image 2024-07-25 at 5.47.35 PM.jpeg…]
+  ![Uploading WhatsApp Image 2024-07-25 at 5.47.35 PM.jpeg…]()
+ ![Uploading WhatsApp Image 2024-07-25 at 5.47.35 PM.jpeg…]()
+ 
+
 Features:
 Add Items: Users can add new items to the library. Each item has a title, author, category, and type (e.g., book, magazine, DVD).
 
